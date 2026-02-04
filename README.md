@@ -1,1 +1,1 @@
-# cinema-hunt
+# Cinema Hunt v1.0.0
