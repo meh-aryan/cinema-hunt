@@ -77,21 +77,19 @@ const movieSchema = new Schema(
   },
 );
 
-movieSchema.pre("save", function (next) {
+movieSchema.pre("save", function () {
   if (!this.isModified("userRating")) {
-    return next();
+    return;
   }
 
   if (!this.userRating || this.userRating.length === 0) {
     this.averageRating = null;
-    return next();
+    return;
   }
 
   const total = this.userRating.reduce((sum, r) => sum + r.rating, 0);
 
   this.averageRating = Number((total / this.userRating.length).toFixed(1));
-
-  next();
 });
 
 const Movie = model("Movie", movieSchema);
