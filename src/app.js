@@ -9,4 +9,8 @@ app.get("/", (_req, res) => {
   res.status(200).json({ success: true, message: "Welcome to Cinema Hunt" });
 });
 
+import movieRouter from "./routes/movie.routes.js";
+
+app.use("/api/v1/movie", movieRouter);
+
 export default app;
