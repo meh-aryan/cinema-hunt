@@ -69,6 +69,7 @@ const movieSchema = new Schema(
       max: 10,
       default: null,
     },
+    posterImageUrl: { type: String, required: true },
     trailerUrl: { type: String, required: true },
   },
   {

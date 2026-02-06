@@ -6,6 +6,11 @@ const getMovieById = async (req, res) => {};
 
 const createMovie = async (req, res) => {
   const movie = await movieService.createMovie(req.body);
+  return res.status(200).json({
+    success: true,
+    message: "Movie added to database successfully.",
+    data: movie,
+  });
 };
 
 const updateMovieById = async (req, res) => {};

@@ -15,6 +15,7 @@ const createMovie = async (movieObject) => {
     isReleased,
     releaseDate = null,
     cinemaRating,
+    posterImageUrl,
     trailerUrl,
   } = movieObject;
 
@@ -28,6 +29,7 @@ const createMovie = async (movieObject) => {
     isReleased,
     releaseDate,
     cinemaRating,
+    posterImageUrl,
     trailerUrl,
   });
 
