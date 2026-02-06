@@ -1,5 +1,4 @@
 import Movie from "../models/Movie.js";
-import CustomError from "../utils/CustomError.js";
 
 const getMovieAll = async () => {};
 
@@ -19,31 +18,22 @@ const createMovie = async (movieObject) => {
     trailerUrl,
   } = movieObject;
 
-  try {
-    const movie = new Movie({
-      name,
-      description,
-      genre,
-      language,
-      pictureQuality,
-      durationMinutes,
-      isReleased,
-      releaseDate,
-      cinemaRating,
-      trailerUrl,
-    });
+  const movie = new Movie({
+    name,
+    description,
+    genre,
+    language,
+    pictureQuality,
+    durationMinutes,
+    isReleased,
+    releaseDate,
+    cinemaRating,
+    trailerUrl,
+  });
 
-    await movie.save();
+  await movie.save();
 
-    return movie;
-  } catch (error) {
-    throw new CustomError(
-      "CANNOT_ADD_MOVIE",
-      500,
-      "There is an internal error while adding movie into database.",
-      error,
-    );
-  }
+  return movie;
 };
 
 const updateMovieById = async () => {};

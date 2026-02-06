@@ -27,12 +27,12 @@ import movieRouter from "./routes/movie.routes.js";
 app.use("/api/v1/movie", movieRouter);
 
 // Global Error Handler
-app.use((err, _req, res, _next) => {
-  console.error(err);
+app.use((error, _req, res, _next) => {
+  console.error(error);
   return res.status(500).json({
     success: false,
     type: "INTERNAL_SERVER_ERROR",
-    message: err.message || "Internal Server Error",
+    message: error.message || "Internal Server Error",
     data: {},
   });
 });
